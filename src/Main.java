@@ -8,7 +8,7 @@ public class Main {
         Window window = new Window();
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setSize(350,150);
+        window.setSize(330,200);
         window.setResizable(false);
         window.setLocationRelativeTo(null);
     }
