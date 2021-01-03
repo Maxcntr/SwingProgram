@@ -2,21 +2,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.util.Formatter;
 import java.util.Scanner;
 
 public class Window extends JFrame {
     JButton jButton;
     JLabel jLabel, jLabel1, jLabel2, jLabel3;
-    JTextField jTextField,jTextField1;
-    String i;
-    String j;
-    String a, b;
-    static Scanner scanner;
+    JTextField jTextField, jTextField1;
+    String a,b,i,j;
+
     eHandler handler = new eHandler();
 
-    public Window(){
+    public Window() {
         setLayout(new FlowLayout());
         jButton = new JButton("РАЗМЕСТИТЬ ЗАКАЗ");
         jLabel = new JLabel("МОДЕЛЬ ВЕЛОСИПЕДА");
@@ -37,25 +34,18 @@ public class Window extends JFrame {
         jButton.addActionListener(handler);
     }
 
-    public class eHandler implements ActionListener{
+    public class eHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            if (e.getSource()==jButton){
+            if (e.getSource() == jButton) {
                 i = jTextField.getText();
                 j = jTextField1.getText();
                 a = "МОДЕЛЬ ВЕЛОСИПЕДОВ " + i;
                 b = "КОЛИЧЕСТВО ВЕЛОСИПЕДОВ " + j;
                 jLabel2.setText(a);
-                jLabel3.setText(b);
+                jLabel3.setText( b);
             }
         }
     }
 
-    private static void openFile(){
-        try {
-            scanner = new Scanner(new File("res//1.txt"));
-        } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(null,"Фаил не найден!");
-        }
-    }
 }
